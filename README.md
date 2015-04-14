@@ -10,6 +10,7 @@ A ORM (Object-relational mapping) libraby for Cassandra
       1. Set
       2. Map
       3. Counter
+   4. Documentation
 
 
 #### Contributing - Totally welcome, just shoot me a message.
