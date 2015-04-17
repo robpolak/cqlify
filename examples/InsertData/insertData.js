@@ -45,7 +45,7 @@ module.exports = function() {
 
     model._pre(function(obj) {
       if(obj.isNew) {
-        obj.id = cqlify.types.getTimeUUID().now();
+        obj.id = cqlify.types.getTimeUuid().now();
       }
     });
 
@@ -53,7 +53,7 @@ module.exports = function() {
   };
 
   var user = new userModel(connection);
-  user.first_name = "23334";
+  user.first_name = "Rob";
   user.age = 31;
   user.address = "some address";
   user.isActive = true;

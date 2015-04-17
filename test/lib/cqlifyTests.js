@@ -18,12 +18,12 @@ describe('Cqlify Tests', function() {
 
   describe('constructor', function() {
     it('Calls cassandra-client' , function() {
-      var cqlize = new cqlify({});
+      var cqlize = new cqlify({connection:{}});
       expect(client_stub.called).to.eql(true);
     });
 
     it('Calls connect' , function() {
-      var cqlize = new cqlify({});
+      var cqlize = new cqlify({connection:{}});
       expect(connect_stub.called).to.eql(true);
     });
   });
