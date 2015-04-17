@@ -1,13 +1,13 @@
 module.exports = function() {
   var cqlify = require('../../app');
-  var cassandra = require('cassandra-driver');
+  var connection = require('./connection');
   var options = {
-    contactPoints: ["host"],
-    keyspace: "kespace",
-    policies: {
-
-    },
-    authProvider: new cassandra.auth.PlainTextAuthProvider("user","pass")
+    connection: {
+      contactPoints: connection.contactPoints,
+      keyspace: connection.keyspace,
+      policies: {},
+      authProvider: connection.authProvider
+    }
   };
 
   var connection = cqlify(options);
@@ -23,7 +23,7 @@ module.exports = function() {
         validators: [
           function(obj) {
             if(obj.length != 5)
-              return cqlify.util.constructMessage(false, "Length is not 3!")
+              return cqlify.util.constructValidationMessage(false, "Length is not 3!")
 
           }
         ]
@@ -45,7 +45,7 @@ module.exports = function() {
 
     model._pre(function(obj) {
       if(obj.isNew) {
-        obj.id = cassandra.types.TimeUuid.now();
+        obj.id = cqlify.types.getTimeUUID().now();
       }
     });
 
@@ -53,12 +53,12 @@ module.exports = function() {
   };
 
   var user = new userModel(connection);
-  user.first_name = 1;
+  user.first_name = "23334";
   user.age = 31;
   user.address = "some address";
   user.isActive = true;
-  var isValue = user._validate();
+  var isValid = user._validate();
   user.insert(function(err, data) {
-
+    console.log('err'+ err);
   });
 }();
