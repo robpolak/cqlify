@@ -58,6 +58,7 @@ module.exports = function() {
   user.address = "some address";
   user.isActive = true;
   var isValid = user._validate();
+  var json = JSON.stringify(user);
   user.insert(function(err, data) {
     console.log('err'+ err);
   });
