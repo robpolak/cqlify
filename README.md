@@ -58,6 +58,13 @@ var userModel = function(cqlify) {
   };
   module.exports = userModel;
 ```
+*Supported Types*
+1. TimeUUID
+2. 
+*Mixed Support*
+1. Map : Supported on Insert and Get.. will eventually support update with a future enhancement
+2. List : Supported on Insert and Get.. will eventually support update with a future enhancement
+3. Counter : No support.. to come.. you could an Int for now, however, need to build in logic for incremental updates.. i.e. "counter + 1"
 
 ### Interacting with Cassandra
 
