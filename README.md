@@ -27,6 +27,8 @@ Now that you have a connection you can create a model.  In your model you will s
 | first_name    | text      
 | address       | text      
 
+*user_model.js*
+```javascript
 var userModel = function(cqlify) {
     var schema = {
       id: {
@@ -54,7 +56,8 @@ var userModel = function(cqlify) {
 
     return model;
   };
-
+  module.exports = userModel;
+```
 
 ### Interacting with Cassandra
 
