@@ -143,6 +143,7 @@ Here is an example of pulling a record from the database and then updating one f
 
 #### Validation
 Out of the box we validate certain fields to ensure they meet the specification to insert into the database.  The fields we do contstraint validation on :
+
 1. TimeUuid
 2. Text
 3. Int(Int32)
