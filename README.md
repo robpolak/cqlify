@@ -4,6 +4,15 @@ A ORM (Object-relational mapping) libraby for Cassandra ontop of the [data-stax 
 #### Status : *PRE-ALPHA* (use at your own risk!, higly unstable)
 #### Current Version : 0.0.2
 
+### Installation
+    $ npm install cqlify
+
+### Bugs
+See <https://github.com/robpolak/cqlify/issues>.    
+
+### License
+The MIT License (MIT)
+
 ### Creating a Connection
 Uses all of the same connection options as https://github.com/datastax/nodejs-driver
   
