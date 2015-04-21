@@ -1,0 +1,36 @@
+{
+  "name": "cqlify",
+  "version": "0.0.1",
+  "description": "Cassandra CQL ORM",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha test --recursive --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robpolak/cqlify.git"
+  },
+  "keywords": [
+    "CQL",
+    "ORM",
+    "Cassandra",
+    "C*"
+  ],
+  "author": "Robert Polak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robpolak/cqlify/issues"
+  },
+  "homepage": "https://github.com/robpolak/cqlify",
+  "dependencies": {
+    "cassandra-driver": "^2.0.1",
+    "moment": "^2.10.2",
+    "underscore": "^1.8.3",
+    "validate.js": "^0.7.1"
+  },
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "mocha": "^2.2.4",
+    "sinon": "^1.14.1"
+  }
+}
