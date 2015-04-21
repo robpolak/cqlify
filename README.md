@@ -2,6 +2,7 @@
 A ORM (Object-relational mapping) libraby for Cassandra ontop of the [data-stax cassandra driver](https://github.com/datastax/nodejs-driver).  
 
 #### Status : *PRE-ALPHA* (use at your own risk!, higly unstable)
+#### Current Version : 0.0.2
 
 ### Creating a Connection
 Uses all of the same connection options as https://github.com/datastax/nodejs-driver
