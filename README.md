@@ -1,18 +1,11 @@
 # cqlify 
 A ORM (Object-relational mapping) libraby for Cassandra ontop of the [data-stax cassandra driver](https://github.com/datastax/nodejs-driver).  
 
-#### Author : Robert Polak
 #### Status : *PRE-ALPHA* (use at your own risk!, higly unstable)
-#### Current Version : 0.0.2
+##### Current Version : 0.0.2
 
 ### Installation
     $ npm install cqlify
-
-### Bugs
-See <https://github.com/robpolak/cqlify/issues>.    
-
-### License
-The MIT License (MIT)
 
 ### Creating a Connection
 Uses all of the same connection options as the [data-stax cassandra driver](https://github.com/datastax/nodejs-driver).  Here is an exmple of a basic C*(Cassandra) database with basic authentication:
@@ -196,5 +189,9 @@ You can always validate manually by invoking the _validate method
 var isValid = user._validate();
 ```
 
-
+#### Author : Robert Polak
+#### Bugs
+See <https://github.com/robpolak/cqlify/issues>.    
+#### License 
+The MIT License (MIT)
 #### Contributing - Totally welcome, just shoot me a message.
