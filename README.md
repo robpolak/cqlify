@@ -1,7 +1,8 @@
 # CQLify 
 A ORM (Object-relational mapping) libraby for Cassandra ontop of the [data-stax cassandra driver](https://github.com/datastax/nodejs-driver).  This library will abstract the need to write raw insert/update/select statements.
 
-#### Status : *PRE-ALPHA* (use at your own risk!, higly unstable)
+#### Status : *PRE-ALPHA* 
+(use at your own risk!, higly unstable)
 ##### Current Version : 0.0.2
 
 ### Installation
