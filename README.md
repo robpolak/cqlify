@@ -1,12 +1,16 @@
-# cqlify 
-A ORM (Object-relational mapping) libraby for Cassandra ontop of the [data-stax cassandra driver](https://github.com/datastax/nodejs-driver).  
+# CQLify 
+A ORM (Object-relational mapping) libraby for Cassandra ontop of the [data-stax cassandra driver](https://github.com/datastax/nodejs-driver).  This library will abstract the need to write raw insert/update/select statements.
 
-#### Status : *PRE-ALPHA* (use at your own risk!, higly unstable)
-#### Current Version : 0.0.2
+#### Status : *PRE-ALPHA* 
+(use at your own risk!, higly unstable)
+##### Current Version : 0.0.2
+
+### Installation
+    $ npm install cqlify
 
 ### Creating a Connection
-Uses all of the same connection options as https://github.com/datastax/nodejs-driver
-  
+Uses all of the same connection options as the [data-stax cassandra driver](https://github.com/datastax/nodejs-driver).  Here is an exmple of a basic C*(Cassandra) database with basic authentication:
+  ```
   var cassandra = require('cassandra-driver');
   var options = {
     connection: {
@@ -17,7 +21,7 @@ Uses all of the same connection options as https://github.com/datastax/nodejs-dr
     }
   };
 var cqlify = require('./cqlify')(options);
-
+```
 
 ### Creating a model
 Now that you have a connection you can create a model.  In your model you will specify the schema, which describes the format of your object.  Let's take an example table:
@@ -186,5 +190,9 @@ You can always validate manually by invoking the _validate method
 var isValid = user._validate();
 ```
 
-
+#### Author : Robert Polak
+#### Bugs
+See <https://github.com/robpolak/cqlify/issues>.    
+#### License 
+The MIT License (MIT)
 #### Contributing - Totally welcome, just shoot me a message.
