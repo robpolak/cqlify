@@ -152,9 +152,9 @@ Out of the box we validate certain fields to ensure they meet the specification 
 6. Boolean
 
 ###### Custom Vaidation
-All schema types allow for custom validation
+All schema types allow for custom validation, all you need to do is add a "validators" array to a schema element.
 
-Validate first name must be atleast 5 characters
+**Validate first name must be atleast 5 characters**
 ```javascipt
   var userModel = function () {
     var schema = {
