@@ -73,15 +73,30 @@ var userModel = function(cqlify) {
 2. List : Supported on Insert and Get.. will eventually support update with a future enhancement
 3. Counter : No support.. to come.. you could an Int for now, however, need to build in logic for incremental updates.. i.e. "counter + 1"
 
-# Select
+### Select
 In this section we will cover how to select data using cqlify.  It is a very easy process to select out data
 
+*Lookup with one field*
 ```javascript
-    var user_db = new userModel();  //create your model
+    var user = new userModel(cqlify);  //create your model
     
-    user_db.find([{
+    user.find([{
       name:'id', value: user.id, comparer: cqlify.comparer.EQUALS  //specify the query type and field name
     }], function(err, data) {
+      if(err){
+        //handle errors here
+      }
+      console.log(data[0].toObject()) //log the first object
+    });
+```
+*Lookup with multi-field, c* always treats this as an AND*
+```javascript
+    var user = new userModel(cqlify);  //create your model
+    
+    user.find([
+      {name:'id', value: 'idvalue', comparer: cqlify.comparer.EQUALS},
+      {name:'first_name', value: 'first_name', comparer: cqlify.comparer.EQUALS},
+    ], function(err, data) {
       if(err){
         //handle errors here
       }
@@ -94,23 +109,80 @@ In this section we will cover how to select data using cqlify.  It is a very eas
 3. LESS_THAN :cqlify.types.LESS_THAN :  count < 10
 4. IN : cqlify.types.IN : value in ("value1","value2","value3)
 
+### Insert
+```javascript
+  var user = new userModel(cqlify);
+  user.id = cqlify.types.getTimeUuid().now();
+  user.first_name = "Robert";
+  user.address = "some address";
+  user.insert(function(err, data) {
+      if(err){
+        //handle errors here
+      }
+      console.log(data[0].toObject()) //log the first object
+  });
+```
+### Update
+Here is an example of pulling a record from the database and then updating one field (address in this case).
+```javascript
+    var user = new userModel(cqlify);
+    user.find([{
+      name:'id', value: user.id, comparer: cqlify.comparer.EQUALS
+    }], function(err, data) {
+      if (err) throw err;
+      var user_from_db = data[0];
+      user_from_db.address = "new address";
+      user_from_db.update(
+        [{name: 'id', value: user.id, comparer: cqlify.comparer.EQUALS}]  //specify the update criteria.. we could automate this in the future..
+        , function (err, data) {
+          if (err) throw err;
+          console.log('saved user');
+        });
+    });
+```
 
+#### Validation
+Out of the box we validate certain fields to ensure they meet the specification to insert into the database.  The fields we do contstraint validation on :
+1. TimeUuid
+2. Text
+3. Int(Int32)
+4. bigint(Int64)
+5. Date
+6. Boolean
 
-### Interacting with Cassandra
+###### Custom Vaidation
+All schema types allow for custom validation
 
+Validate first name must be atleast 5 characters
+```javascipt
+  var userModel = function () {
+    var schema = {
+      id: {
+        type: cqlify.types.TIMEUUID,
+        key_type: cqlify.types.PRIMARY_KEY,
+        key_order: 1
+      },
+      first_name: {
+        type: cqlify.types.TEXT,
+        validators: [
+          function (obj) {
+            if (obj && obj.length < 5){
+              return cqlify.util.constructValidationMessage(false, "First name must be atleast 5 characters"); //construct the error message.
+            }
+            return true; //return back the object is valid
+              
+          }
+        ]
+      }
+    }
+  });
+```
+###### Ad-hoc validation
+You can always validate manually by invoking the _validate method
 
-
-
-**To-Do:**
-   1. Unit Tests
-   2. Support all native types
-   3. Support Complex Types
-      1. Set
-      2. Map
-      3. Counter
-   4. Documentation
-   5. D-trace integration
-   6. Better eventing interface
+```javascript
+var isValid = user._validate();
+```
 
 
 #### Contributing - Totally welcome, just shoot me a message.
