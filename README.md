@@ -3,7 +3,7 @@ A ORM (Object-relational mapping) libraby for Cassandra ontop of the [data-stax 
 
 #### Status : *PRE-ALPHA* 
 (use at your own risk!, higly unstable)
-##### Current Version : 0.0.2
+##### Current Version : 0.0.4
 
 ### Installation
     $ npm install cqlify
@@ -12,15 +12,14 @@ A ORM (Object-relational mapping) libraby for Cassandra ontop of the [data-stax 
 Uses all of the same connection options as the [data-stax cassandra driver](https://github.com/datastax/nodejs-driver).  Here is an exmple of a basic C*(Cassandra) database with basic authentication:
   ```
   var cassandra = require('cassandra-driver');
-  var options = {
-    connection: {
+  var connectionOptions = {
       contactPoints: ["2.2.2.2","3.3.3.3"],
       keyspace: "keyspace",
       policies: {},
       authProvider: new cassandra.auth.PlainTextAuthProvider("user", "password")
-    }
   };
-var cqlify = require('./cqlify')(options);
+var cqlify = require('./cqlify');
+cqlify.createConnection(connectionOptions);
 ```
 
 ### Creating a model

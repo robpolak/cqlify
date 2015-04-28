@@ -2,15 +2,15 @@ module.exports = function() {
 
 
   var connection = require('./connection');
-  var options = {
-    connection: {
-      contactPoints: connection.contactPoints,
-      keyspace: connection.keyspace,
-      policies: {},
-      authProvider: connection.authProvider
-    }
+  var connectionOptions = {
+    contactPoints: connection.contactPoints,
+    keyspace: connection.keyspace,
+    policies: {},
+    authProvider: connection.authProvider
   };
-  var cqlify = require('../../app')(options);
+
+  var cqlify = require('../../app');
+  cqlify.createConnection(connectionOptions);
 
   var userModel = function() {
     var schema = {
@@ -84,12 +84,14 @@ module.exports = function() {
   var isValid = user._validate();
   var json = JSON.stringify(user);
   user.insert(function(err, data) {
-    console.log('err'+ err);
+    if(err) {
+      console.log('ERROR:' + err);
+    }
     var user_db = new userModel();
     user_db.find([{
       name:'id', value: user.id, comparer: cqlify.comparer.EQUALS
     }], function(err, data) {
-      console.log(data[0].toObject())
+      console.log('Data Found: \n'+ JSON.stringify(data[0].toObject(), null,4));
     });
 
 
