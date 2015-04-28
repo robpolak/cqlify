@@ -23,7 +23,7 @@ module.exports = function() {
         type: cqlify.types.TEXT,
         validators: [
           function(obj) {
-            if(obj && obj.length != 5)
+            if(obj && obj.length != 6)
               return cqlify.util.constructValidationMessage(false, "Length is not 5!")
 
           }
@@ -57,23 +57,23 @@ module.exports = function() {
         }
       }
     };
+    var opts = {
+      tableName: 'user',
+      pre: function(obj) {
+        if(obj.isNew) {
+          obj.id = cqlify.types.getTimeUuid().now();
+        }
+      },
+      post:function(obj) {
 
-    var model = cqlify.model(schema, {
-      tableName: 'user'
-    });
-/*
-    model._pre(function(obj) {
-      if(obj.isNew) {
-        obj.id = cqlify.types.getTimeUuid().now();
       }
-    });
-*/
+    };
+    var model = cqlify.model(schema, opts);
     return model;
   }();
 
   var user = new userModel();
-  user.id = cqlify.types.getTimeUuid().now();
-  user.first_name = "Rober";
+  user.first_name = "Robert";
   user.age = 31;
   user.address = "some address";
   user.isActive = true;
