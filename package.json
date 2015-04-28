@@ -1,6 +1,6 @@
 {
   "name": "cqlify",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Cassandra CQL ORM",
   "main": "app.js",
   "scripts": {

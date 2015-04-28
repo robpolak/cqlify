@@ -61,17 +61,18 @@ module.exports = function() {
     var model = cqlify.model(schema, {
       tableName: 'user'
     });
-
+/*
     model._pre(function(obj) {
       if(obj.isNew) {
         obj.id = cqlify.types.getTimeUuid().now();
       }
     });
-
+*/
     return model;
-  };
+  }();
 
   var user = new userModel();
+  user.id = cqlify.types.getTimeUuid().now();
   user.first_name = "Rober";
   user.age = 31;
   user.address = "some address";
@@ -87,8 +88,8 @@ module.exports = function() {
     if(err) {
       console.log('ERROR:' + err);
     }
-    var user_db = new userModel();
-    user_db.find([{
+
+    userModel.find([{
       name:'id', value: user.id, comparer: cqlify.comparer.EQUALS
     }], function(err, data) {
       console.log('Data Found: \n'+ JSON.stringify(data[0].toObject(), null,4));
