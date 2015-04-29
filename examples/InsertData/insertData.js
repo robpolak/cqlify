@@ -89,7 +89,7 @@ module.exports = function() {
       console.log('ERROR:' + err);
     }
 
-    userModel.find([{
+    user.find([{
       name:'id', value: user.id, comparer: cqlify.comparer.EQUALS
     }], function(err, data) {
       console.log('Data Found: \n'+ JSON.stringify(data[0].toObject(), null,4));
