@@ -3,7 +3,7 @@ A ORM (Object-relational mapping) libraby for Cassandra ontop of the [data-stax 
 
 #### Status : *PRE-ALPHA* 
 (use at your own risk!, higly unstable)
-##### Current Version : 0.0.4
+##### Current Version : 0.0.6
 
 ### Installation
     $ npm install cqlify

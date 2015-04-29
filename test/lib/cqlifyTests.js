@@ -4,6 +4,7 @@ describe('Cqlify Tests', function() {
   var expect = require('chai').expect;
   var cassandra_driver = require('cassandra-driver');
   var client_stub, connect_stub;
+
   beforeEach(function () {
     //STUBS
     connect_stub = sinon.stub();
@@ -17,13 +18,12 @@ describe('Cqlify Tests', function() {
   });
 
   describe('constructor', function() {
-    it('Calls cassandra-client' , function() {
-      var cqlize = new cqlify({connection:{}});
-      expect(client_stub.called).to.eql(true);
-    });
 
+  });
+
+  describe('createConnection', function() {
     it('Calls connect' , function() {
-      var cqlize = new cqlify({connection:{}});
+      cqlify.createConnection({});
       expect(connect_stub.called).to.eql(true);
     });
   });
