@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea892c1a-564d-4b24-b5dd-07b76585e421" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/InsertData/counter.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/lib/comparerTests.js" afterPath="$PROJECT_DIR$/test/unit/lib/comparerTests.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/lib/cqlifyTests.js" afterPath="$PROJECT_DIR$/test/unit/lib/cqlifyTests.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/lib/endToEndTests.js" afterPath="$PROJECT_DIR$/test/unit/lib/endToEndTests.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/lib/instanceTests.js" afterPath="$PROJECT_DIR$/test/unit/lib/instanceTests.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/lib/queryTests.js" afterPath="$PROJECT_DIR$/test/unit/lib/queryTests.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/lib/utilityTests.js" afterPath="$PROJECT_DIR$/test/unit/lib/utilityTests.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/lib/validatorTests.js" afterPath="$PROJECT_DIR$/test/unit/lib/validatorTests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/integration/insertTests.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/cqlify.js" afterPath="$PROJECT_DIR$/lib/cqlify.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/instance.js" afterPath="$PROJECT_DIR$/lib/instance.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/model.js" afterPath="$PROJECT_DIR$/lib/model.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/query.js" afterPath="$PROJECT_DIR$/lib/query.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/types.js" afterPath="$PROJECT_DIR$/lib/types.js" />
@@ -51,12 +41,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="counter.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cqlify.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/cqlify.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="156" max-vertical-offset="1380">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="insertData.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/InsertData/insertData.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1590">
+              <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="counter.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/InsertData/counter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21666667" vertical-offset="390" max-vertical-offset="1290">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="52" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="332" max-vertical-offset="1290">
+              <caret line="61" column="28" selection-start-line="55" selection-start-column="2" selection-end-line="61" selection-end-column="28" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="insertTests.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/integration/insertTests.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3986637" vertical-offset="92" max-vertical-offset="990">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <element signature="e#859#3160#0" expanded="false" />
+                <element signature="e#2053#3153#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,8 +87,8 @@
       <file leaf-file-name="types.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/types.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="471" max-vertical-offset="4785">
-              <caret line="50" column="73" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="411" max-vertical-offset="4890">
+              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -74,8 +97,8 @@
       <file leaf-file-name="query.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/query.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2166" max-vertical-offset="3840">
-              <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3198" max-vertical-offset="3945">
+              <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -109,15 +132,17 @@
         <option value="$PROJECT_DIR$/lib/states.js" />
         <option value="$PROJECT_DIR$/lib/validator.js" />
         <option value="$PROJECT_DIR$/test/lib/cqlifyTests.js" />
-        <option value="$PROJECT_DIR$/lib/cqlify.js" />
         <option value="$PROJECT_DIR$/examples/InsertData/insertData.js" />
         <option value="$PROJECT_DIR$/lib/instance.js" />
         <option value="$PROJECT_DIR$/lib/model.js" />
-        <option value="$PROJECT_DIR$/lib/query.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/examples/InsertData/counter.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/test/integration/connection.js" />
+        <option value="$PROJECT_DIR$/lib/cqlify.js" />
+        <option value="$PROJECT_DIR$/lib/query.js" />
         <option value="$PROJECT_DIR$/lib/types.js" />
+        <option value="$PROJECT_DIR$/test/integration/insertTests.js" />
       </list>
     </option>
   </component>
@@ -204,6 +229,10 @@
               <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="integration" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -243,7 +272,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/unit" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="recentsLimit" value="5" />
@@ -272,11 +301,12 @@
       <recent name="$PROJECT_DIR$/examples/InsertData" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test/integration" />
       <recent name="$PROJECT_DIR$/test/unit" />
       <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Node - Counter">
+  <component name="RunManager" selected="Mocha.Mocha - Integration Tests">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -333,7 +363,22 @@
       <envs />
       <ui>BDD</ui>
       <extra-mocha-options />
-      <test-directory>$PROJECT_DIR$/test</test-directory>
+      <test-directory>$PROJECT_DIR$/test/unit</test-directory>
+      <recursive>true</recursive>
+      <RunnerSettings RunnerId="RunnerForMochaJavaScript" />
+      <RunnerSettings RunnerId="debuggableProgram" />
+      <ConfigurationWrapper RunnerId="RunnerForMochaJavaScript" />
+      <ConfigurationWrapper RunnerId="debuggableProgram" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Mocha - Integration Tests" type="mocha-javascript-test-runner" factoryName="Mocha" singleton="false">
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>BDD</ui>
+      <extra-mocha-options>--timeout 15000</extra-mocha-options>
+      <test-directory>$PROJECT_DIR$/test/integration</test-directory>
       <recursive>true</recursive>
       <RunnerSettings RunnerId="RunnerForMochaJavaScript" />
       <RunnerSettings RunnerId="debuggableProgram" />
@@ -355,10 +400,11 @@
       <ConfigurationWrapper RunnerId="debuggableProgram" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Mocha.Mocha - Unit Tests" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.Node - InsertData" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.Node - Counter" />
+      <item index="1" class="java.lang.String" itemvalue="Mocha.Mocha - Integration Tests" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.Node - InsertData" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.Node - Counter" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -456,21 +502,28 @@
       <option name="project" value="LOCAL" />
       <updated>1430323284810</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Counter implementation&#10;">
+      <created>1430504296867</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1430504296867</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="2560" height="1440" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20189504" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20145985" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12051989" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43440235" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32361516" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12051989" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43430656" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3240876" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28759125" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -478,7 +531,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -525,7 +577,8 @@
     <MESSAGE value="validation" />
     <MESSAGE value="version update" />
     <MESSAGE value="test and readme fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="test and readme fixes" />
+    <MESSAGE value="Counter implementation&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Counter implementation&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -540,8 +593,18 @@
           <line>91</line>
           <option name="timeStamp" value="186" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/test/integration/insertTests.js</url>
+          <line>57</line>
+          <option name="timeStamp" value="249" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/lib/types.js</url>
+          <line>44</line>
+          <option name="timeStamp" value="251" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="240" />
+      <option name="time" value="253" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
@@ -559,21 +622,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/types.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="3480">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/InsertData/insertData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1035">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/cqlify.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="645">
@@ -794,13 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/InsertData/connection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/cassandra-driver/lib/client-options.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3329609" vertical-offset="602" max-vertical-offset="1800">
@@ -845,14 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/InsertData/insertData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="842" max-vertical-offset="1590">
-          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="95" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/cassandra-driver/lib/streams.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3328877" vertical-offset="7011" max-vertical-offset="8250">
@@ -865,14 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2346" max-vertical-offset="5805">
           <caret line="173" column="4" selection-start-line="173" selection-start-column="4" selection-end-line="173" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/cqlify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="227" max-vertical-offset="1275">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -909,10 +934,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/query.js">
+    <entry file="file://$PROJECT_DIR$/examples/InsertData/connection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2166" max-vertical-offset="3840">
-          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.016703786" vertical-offset="0" max-vertical-offset="898">
+          <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/integration/connection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08032128" vertical-offset="0" max-vertical-offset="747">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -925,19 +958,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/types.js">
+    <entry file="file://$PROJECT_DIR$/examples/InsertData/insertData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="471" max-vertical-offset="4785">
-          <caret line="50" column="73" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1590">
+          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/InsertData/counter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21666667" vertical-offset="390" max-vertical-offset="1290">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="52" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="332" max-vertical-offset="1290">
+          <caret line="61" column="28" selection-start-line="55" selection-start-column="2" selection-end-line="61" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/query.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3198" max-vertical-offset="3945">
+          <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/cqlify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="156" max-vertical-offset="1380">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/types.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="411" max-vertical-offset="4890">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/integration/insertTests.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3986637" vertical-offset="92" max-vertical-offset="990">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#859#3160#0" expanded="false" />
+            <element signature="e#2053#3153#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
