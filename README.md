@@ -3,7 +3,7 @@ A ORM (Object-relational mapping) libraby for Cassandra ontop of the [data-stax 
 
 #### Status : *PRE-ALPHA* 
 (use at your own risk!, higly unstable)
-##### Current Version : 0.0.6
+##### Current Version : 0.0.8
 
 ### Installation
     $ npm install cqlify
@@ -144,6 +144,47 @@ Here is an example of pulling a record from the database and then updating one f
         });
     });
 ```
+
+#### Using Counters
+Counters are kind of a special animal when it comes to CQL.. To insert a Counter you actually have to do an Update.. even if it is new.. odd I know..  Counters must always be incremented or decremented, thus CQLify enforces a format like '+0' '+1' '-5' etc.. Thus, here is how you would create a new counter..
+
+*Model*
+```javascript
+  var pageCountModel = function() {
+    var schema = {
+      counter_value: {
+        type: cqlify.types.COUNTER
+      },
+      url_name: {
+        type: cqlify.types.TEXT
+      },
+      page_name: {
+        type: cqlify.types.TEXT
+      }
+    };
+    var opts = {
+      tableName: 'counts'
+    };
+    var model = cqlify.model(schema, opts);
+    return model;
+  }();
+```
+*Code*
+````javascript
+  var page = new pageCountModel();
+  page.page_name = 'cnn';
+  page.url_name =  'www.cnn.com';
+  page._markClean();  //this is kind of a hack for now.. basically you never want the primary keys being marked as dirty, which then puts it on the update set.
+  page.counter_value = "+0";  //must always increment or decrement .. cannot set a value
+  page.update([
+    {name: "page_name", value: page.page_name, comparer: cqlify.comparer.EQUALS},
+    {name: "url_name", value: page.url_name, comparer: cqlify.comparer.EQUALS},
+  ],function(err, data) {
+    if(err) {
+      console.log('ERROR:' + err);
+    }
+  });
+````
 
 #### Validation
 Out of the box we validate certain fields to ensure they meet the specification to insert into the database.  The fields we do contstraint validation on :
