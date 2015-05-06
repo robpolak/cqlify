@@ -1,8 +1,11 @@
-require('nodetime').profile({
-  accountKey: '882c7c4ce15e10d3c74e135435a3c986a8591053',
-  appName: 'CQLify'
-});
 module.exports = function() {
+
+  /*
+  require('nodetime').profile({
+    accountKey: '882c7c4ce15e10d3c74e135435a3c986a8591053',
+    appName: 'CQLify'
+  });*/
+
   var cqlify = require('../../lib/cqlify');
   var model = require('../../lib/model');
   var moment = require('moment');
@@ -65,11 +68,13 @@ module.exports = function() {
   }();
 
   function run() {
+    console.log('Running');
     hydrateModel();
+    return;
   }
 
   function hydrateModel() {
-    var iteration = 10000000;
+    var iteration = 50000;
     var fromObj = {
       date: "2015-05-04 17:00:00-0700",
       notificationId: "123123123",
@@ -86,6 +91,7 @@ module.exports = function() {
     var end = moment();
     var diff = end.diff(st, 'milliseconds');
     console.log('Hydrate Model x 10000:' + diff);
+    return;
   };
 
   run();

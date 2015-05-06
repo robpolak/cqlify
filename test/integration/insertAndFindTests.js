@@ -1,4 +1,4 @@
-describe('Counter Tests', function() {
+describe('Insert & Find Tests', function() {
   var cqlify = require('../../app');
   var async = require('async');
   var expect = require('chai').expect;
@@ -107,20 +107,62 @@ describe('Counter Tests', function() {
     }
     return randomString;
   }
-  var pageCountModel = function() {
+
+  var userModel = function() {
     var schema = {
-      counter_value: {
-        type: cqlify.types.COUNTER
+      id: {
+        type: cqlify.types.TIMEUUID,
+        key_type: cqlify.types.PRIMARY_KEY,
+        key_order: 1
       },
-      url_name: {
+      first_name: {
+        type: cqlify.types.TEXT,
+        validators: [
+          function(obj) {
+            if(obj && obj.length != 6)
+              return cqlify.util.constructValidationMessage(false, "Length is not 5!")
+
+          }
+        ]
+      },
+      address: {
         type: cqlify.types.TEXT
       },
-      page_name: {
-        type: cqlify.types.TEXT
+      age: {
+        type: cqlify.types.INT
+      },
+      isActive: {
+        type: cqlify.types.BOOLEAN
+      },
+      nick_names: {
+        type: cqlify.types.LIST,
+        schema: {
+          type: cqlify.types.TEXT
+        }
+      },
+      phone_numbers: {
+        type: cqlify.types.MAP,
+        schema: {
+          number_type: {
+            type: cqlify.types.TEXT,
+            key_type: cqlify.types.PRIMARY_KEY
+          },
+          phone_number: {
+            type: cqlify.types.TEXT
+          }
+        }
       }
     };
     var opts = {
-      tableName: 'counts'
+      tableName: 'user',
+      pre: function(obj) {
+        if(obj.isNew) {
+          obj.id = cqlify.types.getTimeUuid().now();
+        }
+      },
+      post:function(obj) {
+
+      }
     };
     var model = cqlify.model(schema, opts);
     return model;

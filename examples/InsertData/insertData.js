@@ -88,13 +88,22 @@ module.exports = function() {
     if(err) {
       console.log('ERROR:' + err);
     }
+    var id = user.id;
+    //Test Paging
+    user.findAndPage([{
+      name:'id', value: id, comparer: cqlify.comparer.EQUALS
+    }], function(err, data) {
+      console.log('Page Data Found: \n'+ JSON.stringify(data.toObject(), null,4));
+    },function() {
+      console.log('No more data found!')
+    });
 
+    //Normal Find
     user.find([{
-      name:'id', value: user.id, comparer: cqlify.comparer.EQUALS
+      name:'id', value: id, comparer: cqlify.comparer.EQUALS
     }], function(err, data) {
       console.log('Data Found: \n'+ JSON.stringify(data[0].toObject(), null,4));
     });
-
 
   });
 
