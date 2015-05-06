@@ -13,13 +13,20 @@ describe('Insert & Find Tests', function() {
     };
 
     cqlify.createConnection(connectionOptions);
-    var table = 'insertTests1';
-    cqlify.rawQuery(
-      ' CREATE TABLE IF NOT EXISTS ' + table + ' ' +
-      '(counter_value counter,' +
-      'url_name varchar,' +
-      'page_name varchar,' +
-      'PRIMARY KEY (url_name, page_name));'
+    var table = 'user_copy1';
+    var sql = " CREATE TABLE IF NOT EXISTS " + table + " " +
+      "(" +
+      "id timeuuid,"+
+      "address text,"+
+      "age int,"+
+      "first_name text,"+
+      "isactive boolean," +
+      "nick_names LIST<text>," +
+      "phone_numbers MAP<text, text>,"+
+      "PRIMARY KEY (id))";
+
+    cqlify.rawQuery(sql
+
       ,{}, function(err, result) {
       if(err) {
         throw "Error Creating Table";
@@ -28,85 +35,87 @@ describe('Insert & Find Tests', function() {
     })
   });
 
-  describe('Counter Tests' , function() {
+  describe('Insert & Find Tests' , function() {
 
-    it('Increment Counter', function (done) {
+    it('Insert and Find Test', function (done) {
+      var user = new userModel();
+      user.first_name = "Robert";
+      user.age = 31;
+      user.address = "some address";
+      user.isActive = true;
+      user.phone_numbers.addNew({number_type:"Home", phone_number:"234-234-3244"});
+      user.phone_numbers.addNew({number_type:"Work", phone_number:"222-234-3244"});
+      user.nick_names.addNew("Rob");
+      user.nick_names.addNew("Bob");
+      user.nick_names.addNew("Bobby");
+
       async.waterfall([
         function (callback) {
-          var page = new pageCountModel();
-          page.page_name = randomString(10);
-          page.url_name = randomString(10);
-          page._markClean();
-          page.counter_value = "+50";
-          page.update([
-            {name: "page_name", value: page.page_name, comparer: cqlify.comparer.EQUALS},
-            {name: "url_name", value: page.url_name, comparer: cqlify.comparer.EQUALS}
-          ], function (err, data) {
-            if (err) {
+          user.insert(function(err, data) {
+            if(err) {
               console.log('ERROR:' + err);
             }
-            callback(null, page);
+            var id = user.id;
+            callback(null, id);
           });
         },
-        function (data, callback) {
-          var page = new pageCountModel();
-          page.find([
-            {name: "page_name", value: data.page_name, comparer: cqlify.comparer.EQUALS},
-            {name: "url_name", value: data.url_name, comparer: cqlify.comparer.EQUALS},
-          ], function (err, data) {
-            var foundPage = data[0];
-            expect(foundPage.counter_value).to.eql(50);
+        function (id, callback) {
+          var foundUser = new userModel();
+          foundUser.find([{
+            name:'id', value: id, comparer: cqlify.comparer.EQUALS
+          }], function(err, data) {
+            expect(data.length).to.eql(1);
+            var obj = data[0];
+            expect(obj.toObject()).to.eql(user.toObject());
             done();
           });
         }
-
       ]);
     });
 
-    it('Decrement Counter', function (done) {
+
+    it('Find and page Test', function (done) {
+      var recordsToPage = 10;
+      var ids = [];
+      var pagedRecords = 0;
+      var user = new userModel();
+      user.first_name = "Robert";
+      user.age = 31;
+      user.address = "some address";
+      user.isActive = true;
+      user.phone_numbers.addNew({number_type:"Home", phone_number:"234-234-3244"});
+      user.phone_numbers.addNew({number_type:"Work", phone_number:"222-234-3244"});
+      user.nick_names.addNew("Rob");
+      user.nick_names.addNew("Bob");
+      user.nick_names.addNew("Bobby");
+
       async.waterfall([
         function (callback) {
-          var page = new pageCountModel();
-          page.page_name = randomString(10);
-          page.url_name = randomString(10);
-          page._markClean();
-          page.counter_value = "-50";
-          page.update([
-            {name: "page_name", value: page.page_name, comparer: cqlify.comparer.EQUALS},
-            {name: "url_name", value: page.url_name, comparer: cqlify.comparer.EQUALS}
-          ], function (err, data) {
-            if (err) {
+          user.insert(function(err, data) {
+            if(err) {
               console.log('ERROR:' + err);
             }
-            callback(null, page);
+            var id = user.id;
+            callback(null, id);
           });
         },
-        function (data, callback) {
-          var page = new pageCountModel();
-          page.find([
-            {name: "page_name", value: data.page_name, comparer: cqlify.comparer.EQUALS},
-            {name: "url_name", value: data.url_name, comparer: cqlify.comparer.EQUALS},
-          ], function (err, data) {
-            var foundPage = data[0];
-            expect(foundPage.counter_value).to.eql(-50);
+        function (id, callback) {
+          var foundUser = new userModel();
+          foundUser.findAndPage([{
+              name:'id', value: id, comparer: cqlify.comparer.EQUALS
+          }], function(err, data) {
+            expect(data.toObject()).to.eql(user.toObject());
+
+          },
+          function() {
+            //done
             done();
           });
         }
-
       ]);
     });
 
   });
-
-  function randomString(len, charSet) {
-    charSet = charSet || 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var randomString = '';
-    for (var i = 0; i < len; i++) {
-      var randomPoz = Math.floor(Math.random() * charSet.length);
-      randomString += charSet.substring(randomPoz,randomPoz+1);
-    }
-    return randomString;
-  }
 
   var userModel = function() {
     var schema = {
@@ -131,7 +140,7 @@ describe('Insert & Find Tests', function() {
       age: {
         type: cqlify.types.INT
       },
-      isActive: {
+      isactive: {
         type: cqlify.types.BOOLEAN
       },
       nick_names: {
