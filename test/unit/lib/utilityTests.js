@@ -1,5 +1,5 @@
 describe('Utility Tests', function() {
-  var util = require('../../lib/utility');
+  var util = require('../../../lib/utility');
 
   var expect = require('chai').expect;
 

@@ -1,5 +1,5 @@
 describe('Validator Tests', function() {
-  var validator = require('../../lib/validator');
+  var validator = require('../../../lib/validator');
   var cassandra_driver = require('cassandra-driver');
   var expect = require('chai').expect;
 

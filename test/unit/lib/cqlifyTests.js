@@ -1,5 +1,5 @@
 describe('Cqlify Tests', function() {
-  var cqlify = require('../../lib/cqlify');
+  var cqlify = require('../../../lib/cqlify');
   var sinon = require('sinon');
   var expect = require('chai').expect;
   var cassandra_driver = require('cassandra-driver');
