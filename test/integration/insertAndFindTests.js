@@ -57,7 +57,6 @@ describe('IF0 - Insert & Find Tests', function() {
 
     it('IF1 - Insert and Find Test', function (done) {
       var user = getUser('some group1');
-
       async.waterfall([
         function (callback) {
           var query = {};

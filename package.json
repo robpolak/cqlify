@@ -1,8 +1,8 @@
 {
   "name": "cqlify",
-  "version": "0.0.9",
+  "version": "^0.0.10",
   "description": "Cassandra CQL ORM",
-  "main": "lib/cqlify.js",
+  "main": "app.js",
   "scripts": {
     "test": "mocha test --recursive --reporter spec"
   },
