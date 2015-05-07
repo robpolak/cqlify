@@ -70,11 +70,12 @@ module.exports = function() {
   function run() {
     console.log('Running');
     hydrateModel();
+    toObject();
     return;
   }
 
   function hydrateModel() {
-    var iteration = 50000;
+    var iteration = 10000;
     var fromObj = {
       date: "2015-05-04 17:00:00-0700",
       notificationId: "123123123",
@@ -91,6 +92,28 @@ module.exports = function() {
     var end = moment();
     var diff = end.diff(st, 'milliseconds');
     console.log('Hydrate Model x 10000:' + diff);
+    return;
+  };
+
+  function toObject() {
+    var iteration = 10000;
+    var fromObj = {
+      date: "2015-05-04 17:00:00-0700",
+      notificationId: "123123123",
+      shard_key: 100,
+      priority: 101,
+      start_date: "2015-05-04 17:00:00-0700"
+    };
+
+    var impl = new notificationModel();
+    var obj = model.hydrateModel(impl._schema, impl._internalState.m_cqlify, {}, fromObj);
+    var st = moment();
+    for (var i = 0; i < iteration; i++) {
+      var x = obj.toObject();
+    }
+    var end = moment();
+    var diff = end.diff(st, 'milliseconds');
+    console.log('To Object x 10000:' + diff);
     return;
   };
 
