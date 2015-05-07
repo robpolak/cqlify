@@ -38,10 +38,13 @@ describe('Counter Tests', function() {
           page.url_name = randomString(10);
           page._markClean();
           page.counter_value = "+50";
-          page.update([
-            {name: "page_name", value: page.page_name, comparer: cqlify.comparer.EQUALS},
-            {name: "url_name", value: page.url_name, comparer: cqlify.comparer.EQUALS}
-          ], function (err, data) {
+          var query = {
+            params:[
+              {name: "page_name", value: page.page_name, comparer: cqlify.comparer.EQUALS},
+              {name: "url_name", value: page.url_name, comparer: cqlify.comparer.EQUALS}
+            ]
+          };
+          page.update(query, function (err, data) {
             if (err) {
               console.log('ERROR:' + err);
             }
@@ -50,10 +53,13 @@ describe('Counter Tests', function() {
         },
         function (data, callback) {
           var page = new pageCountModel();
-          page.find([
-            {name: "page_name", value: data.page_name, comparer: cqlify.comparer.EQUALS},
-            {name: "url_name", value: data.url_name, comparer: cqlify.comparer.EQUALS},
-          ], function (err, data) {
+          var query = {
+            params:[
+              {name: "page_name", value: data.page_name, comparer: cqlify.comparer.EQUAL},
+              {name: "url_name", value: data.url_name, comparer: cqlify.comparer.EQUALS},
+            ]
+          };
+          page.find(query, function (err, data) {
             var foundPage = data[0];
             expect(foundPage.counter_value).to.eql(50);
             done();
@@ -71,10 +77,13 @@ describe('Counter Tests', function() {
           page.url_name = randomString(10);
           page._markClean();
           page.counter_value = "-50";
-          page.update([
-            {name: "page_name", value: page.page_name, comparer: cqlify.comparer.EQUALS},
-            {name: "url_name", value: page.url_name, comparer: cqlify.comparer.EQUALS}
-          ], function (err, data) {
+          var query = {
+            params:[
+              {name: "page_name", value: page.page_name, comparer: cqlify.comparer.EQUALS},
+              {name: "url_name", value: page.url_name, comparer: cqlify.comparer.EQUALS}
+            ]
+          };
+          page.update(query, function (err, data) {
             if (err) {
               console.log('ERROR:' + err);
             }
@@ -83,10 +92,13 @@ describe('Counter Tests', function() {
         },
         function (data, callback) {
           var page = new pageCountModel();
-          page.find([
-            {name: "page_name", value: data.page_name, comparer: cqlify.comparer.EQUALS},
-            {name: "url_name", value: data.url_name, comparer: cqlify.comparer.EQUALS},
-          ], function (err, data) {
+          var query = {
+            params:[
+              {name: "page_name", value: data.page_name, comparer: cqlify.comparer.EQUAL},
+              {name: "url_name", value: data.url_name, comparer: cqlify.comparer.EQUALS},
+            ]
+          };
+          page.find(query, function (err, data) {
             var foundPage = data[0];
             expect(foundPage.counter_value).to.eql(-50);
             done();

@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea892c1a-564d-4b24-b5dd-07b76585e421" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/cqlify.js" afterPath="$PROJECT_DIR$/lib/cqlify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/integration/counterTests.js" afterPath="$PROJECT_DIR$/test/integration/counterTests.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/integration/insertAndFindTests.js" afterPath="$PROJECT_DIR$/test/integration/insertAndFindTests.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/instance.js" afterPath="$PROJECT_DIR$/lib/instance.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/query.js" afterPath="$PROJECT_DIR$/lib/query.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/types.js" afterPath="$PROJECT_DIR$/lib/types.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cqlify.iws" />
@@ -33,18 +33,8 @@
       <file leaf-file-name="cqlify.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/cqlify.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1410">
+            <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1410">
               <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="model.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/model.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="206" max-vertical-offset="1020">
-              <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -60,11 +50,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="instance.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/instance.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2828" max-vertical-offset="4170">
+              <caret line="226" column="48" selection-start-line="226" selection-start-column="48" selection-end-line="226" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="counterTests.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/integration/counterTests.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="645" max-vertical-offset="2010">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="870" max-vertical-offset="2190">
+              <caret line="85" column="51" selection-start-line="85" selection-start-column="51" selection-end-line="85" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -73,10 +73,13 @@
       <file leaf-file-name="insertAndFindTests.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/integration/insertAndFindTests.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8161765" vertical-offset="684" max-vertical-offset="1905">
-              <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7342583" vertical-offset="317" max-vertical-offset="3015">
+              <caret line="147" column="78" selection-start-line="147" selection-start-column="78" selection-end-line="147" selection-end-column="78" />
               <folding>
-                <element signature="e#3393#4660#0" expanded="false" />
+                <element signature="e#211#1300#0" expanded="false" />
+                <element signature="e#1406#2616#0" expanded="false" />
+                <element signature="e#6132#6597#0" expanded="false" />
+                <element signature="e#6636#6956#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -85,20 +88,9 @@
       <file leaf-file-name="query.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/query.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="339" max-vertical-offset="1815">
-              <caret line="211" column="60" selection-start-line="211" selection-start-column="60" selection-end-line="211" selection-end-column="60" />
-              <folding>
-                <element signature="e#282#1107#0" expanded="false" />
-                <element signature="e#1162#1431#0" expanded="false" />
-                <element signature="e#1460#1657#0" expanded="false" />
-                <element signature="e#1703#2063#0" expanded="false" />
-                <element signature="e#2129#2576#0" expanded="false" />
-                <element signature="e#2637#3365#0" expanded="false" />
-                <element signature="e#3417#3481#0" expanded="false" />
-                <element signature="e#3526#4609#0" expanded="false" />
-                <element signature="e#4643#5435#0" expanded="false" />
-                <element signature="e#7815#7925#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="2055" max-vertical-offset="4815">
+              <caret line="160" column="73" selection-start-line="160" selection-start-column="73" selection-end-line="160" selection-end-column="73" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,12 +135,12 @@
         <option value="$PROJECT_DIR$/lib/model.js" />
         <option value="$PROJECT_DIR$/test/perf/readme.md" />
         <option value="$PROJECT_DIR$/test/perf/perf.js" />
-        <option value="$PROJECT_DIR$/lib/instance.js" />
         <option value="$PROJECT_DIR$/examples/InsertData/insertData.js" />
         <option value="$PROJECT_DIR$/lib/cqlify.js" />
         <option value="$PROJECT_DIR$/lib/types.js" />
         <option value="$PROJECT_DIR$/test/integration/counterTests.js" />
         <option value="$PROJECT_DIR$/lib/query.js" />
+        <option value="$PROJECT_DIR$/lib/instance.js" />
         <option value="$PROJECT_DIR$/test/integration/insertAndFindTests.js" />
       </list>
     </option>
@@ -161,9 +153,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1440" />
-    <option name="y" value="23" />
     <option name="width" value="2560" />
-    <option name="height" value="1341" />
+    <option name="height" value="1440" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -299,7 +290,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="FullScreen" value="false" />
+    <property name="FullScreen" value="true" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="426" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="427" />
@@ -400,7 +391,7 @@
       <pass-parent-env>true</pass-parent-env>
       <envs />
       <ui>BDD</ui>
-      <extra-mocha-options>--timeout 15000 --grep &quot; &quot;</extra-mocha-options>
+      <extra-mocha-options>--timeout 350000 --grep &quot;&quot;</extra-mocha-options>
       <test-directory>$PROJECT_DIR$/test/integration</test-directory>
       <recursive>true</recursive>
       <RunnerSettings RunnerId="RunnerForMochaJavaScript" />
@@ -557,11 +548,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430950059214</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="paging and integration tests">
+      <created>1430953023066</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1430953023066</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="23" width="2560" height="1341" extended-state="0" />
+    <frame x="1440" y="0" width="2560" height="1440" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -570,9 +567,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12051989" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43394715" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3242594" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12051989" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43357664" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29562044" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28742996" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -642,16 +639,11 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/test/integration/insertAndFindTests.js</url>
-          <line>69</line>
-          <option name="timeStamp" value="313" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/test/integration/insertAndFindTests.js</url>
-          <line>106</line>
-          <option name="timeStamp" value="315" />
+          <line>104</line>
+          <option name="timeStamp" value="368" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="316" />
+      <option name="time" value="372" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="NodeJSConfigurationType">
@@ -665,6 +657,9 @@
         <watch expression="user" language="JavaScript" />
         <watch expression="model" language="JavaScript" />
         <watch expression="cqlify.instance.prototype.find" language="JavaScript" />
+      </configuration>
+      <configuration name="mocha-javascript-test-runner">
+        <watch expression="group" language="JavaScript" />
       </configuration>
     </watches-manager>
   </component>
@@ -868,13 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/InsertData/connection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.016703786" vertical-offset="0" max-vertical-offset="898">
-          <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/integration/connection.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08032128" vertical-offset="0" max-vertical-offset="747">
@@ -992,14 +980,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/instance.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.303572" vertical-offset="2448" max-vertical-offset="4170">
-          <caret line="239" column="69" selection-start-line="239" selection-start-column="69" selection-end-line="239" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/examples/InsertData/insertData.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="176" max-vertical-offset="855">
@@ -1010,10 +990,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/types.js">
+    <entry file="file://$PROJECT_DIR$/lib/model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3703704" vertical-offset="1853" max-vertical-offset="5055">
-          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="206" max-vertical-offset="1020">
+          <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/InsertData/connection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1026,47 +1014,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/model.js">
+    <entry file="file://$PROJECT_DIR$/lib/types.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="206" max-vertical-offset="1020">
-          <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
+        <state vertical-scroll-proportion="-6.3703704" vertical-offset="1853" max-vertical-offset="5055">
+          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/integration/counterTests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2010">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="870" max-vertical-offset="2190">
+          <caret line="85" column="51" selection-start-line="85" selection-start-column="51" selection-end-line="85" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/query.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="339" max-vertical-offset="1815">
-          <caret line="211" column="60" selection-start-line="211" selection-start-column="60" selection-end-line="211" selection-end-column="60" />
-          <folding>
-            <element signature="e#282#1107#0" expanded="false" />
-            <element signature="e#1162#1431#0" expanded="false" />
-            <element signature="e#1460#1657#0" expanded="false" />
-            <element signature="e#1703#2063#0" expanded="false" />
-            <element signature="e#2129#2576#0" expanded="false" />
-            <element signature="e#2637#3365#0" expanded="false" />
-            <element signature="e#3417#3481#0" expanded="false" />
-            <element signature="e#3526#4609#0" expanded="false" />
-            <element signature="e#4643#5435#0" expanded="false" />
-            <element signature="e#7815#7925#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="2055" max-vertical-offset="4815">
+          <caret line="160" column="73" selection-start-line="160" selection-start-column="73" selection-end-line="160" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/instance.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2828" max-vertical-offset="4170">
+          <caret line="226" column="48" selection-start-line="226" selection-start-column="48" selection-end-line="226" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/integration/insertAndFindTests.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8161765" vertical-offset="684" max-vertical-offset="1905">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7342583" vertical-offset="317" max-vertical-offset="3015">
+          <caret line="147" column="78" selection-start-line="147" selection-start-column="78" selection-end-line="147" selection-end-column="78" />
           <folding>
-            <element signature="e#3393#4660#0" expanded="false" />
+            <element signature="e#211#1300#0" expanded="false" />
+            <element signature="e#1406#2616#0" expanded="false" />
+            <element signature="e#6132#6597#0" expanded="false" />
+            <element signature="e#6636#6956#0" expanded="false" />
           </folding>
         </state>
       </provider>
