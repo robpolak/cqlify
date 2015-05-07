@@ -3,7 +3,7 @@ A ORM (Object-relational mapping) libraby for Cassandra ontop of the [data-stax 
 
 #### Status : *PRE-ALPHA* 
 (use at your own risk!, higly unstable)
-##### Current Version : 0.0.8
+##### Current Version : 0.0.9
 
 ### Installation
     $ npm install cqlify
@@ -96,11 +96,13 @@ In this section we will cover how to select data using cqlify.  It is a very eas
 *Lookup with multi-field, c* always treats this as an AND*
 ```javascript
     var user = new userModel(cqlify);  //create your model
-    
-    user.find([
-      {name:'id', value: 'idvalue', comparer: cqlify.comparer.EQUALS},
-      {name:'first_name', value: 'first_name', comparer: cqlify.comparer.EQUALS},
-    ], function(err, data) {
+		var query = {
+			params: [
+				{name:'id', value: 'idvalue', comparer: cqlify.comparer.EQUALS},
+				{name:'first_name', value: 'first_name', comparer: cqlify.comparer.EQUALS},
+			]
+		};
+    user.find(query, function(err, data) {
       if(err){
         //handle errors here
       }
@@ -119,7 +121,8 @@ In this section we will cover how to select data using cqlify.  It is a very eas
   user.id = cqlify.types.getTimeUuid().now();
   user.first_name = "Robert";
   user.address = "some address";
-  user.insert(function(err, data) {
+  var query = {};
+  user.insert(query, function(err, data) {
       if(err){
         //handle errors here
       }
@@ -130,9 +133,12 @@ In this section we will cover how to select data using cqlify.  It is a very eas
 Here is an example of pulling a record from the database and then updating one field (address in this case).
 ```javascript
     var user = new userModel(cqlify);
-    user.find([{
-      name:'id', value: user.id, comparer: cqlify.comparer.EQUALS
-    }], function(err, data) {
+		var query = {
+			params: [{
+				name:'id', value: user.id, comparer: cqlify.comparer.EQUALS
+			}]
+		};
+    user.find(query, function(err, data) {
       if (err) throw err;
       var user_from_db = data[0];
       user_from_db.address = "new address";
@@ -176,10 +182,14 @@ Counters are kind of a special animal when it comes to CQL.. To insert a Counter
   page.url_name =  'www.cnn.com';
   page._markClean();  //this is kind of a hack for now.. basically you never want the primary keys being marked as dirty, which then puts it on the update set.
   page.counter_value = "+0";  //must always increment or decrement .. cannot set a value
-  page.update([
-    {name: "page_name", value: page.page_name, comparer: cqlify.comparer.EQUALS},
-    {name: "url_name", value: page.url_name, comparer: cqlify.comparer.EQUALS},
-  ],function(err, data) {
+
+	var query = {
+		params: [
+			{name: "page_name", value: page.page_name, comparer: cqlify.comparer.EQUALS},
+			{name: "url_name", value: page.url_name, comparer: cqlify.comparer.EQUALS},
+		]
+	};
+  page.update(query, function(err, data) {
     if(err) {
       console.log('ERROR:' + err);
     }
