@@ -199,68 +199,69 @@ describe('IF0 - Insert & Find Tests', function() {
       ]);
     });
 
-  });
+    it('IF4 - Insert & Page & Continue Page', function (done) {
+      var recordsToPage = 10;
+      var ids = [];
+      var pagedRecords = 0;
+      var group = randomString(15);
 
-  it('IF4 - Insert & Page & Continue Page', function (done) {
-    var recordsToPage = 10;
-    var ids = [];
-    var pagedRecords = 0;
-    var group = randomString(15);
-
-    async.waterfall([
-      function (callback) {
-        for (i = 0; i < recordsToPage; i++) {
-          var newUser = getUser(group);
-          var query = {};
-          newUser.insert(query, function (err, data) {
-            if (err) {
-              console.log('ERROR:' + err);
-            }
-            var id = newUser.id;
-            ids.push(id);
-            if (ids.length == recordsToPage) {
-              callback(null, id);
-            }
-          });
-        }
-      },
-      function (id, callback) {
-        var foundUser = new userModel();
-        var expectedUser = getUser(group).toObject();
-
-        function find(pageState) {
-          delete expectedUser.id;
-          var query = {
-            params: [{
-              name: 'group', value: group, comparer: cqlify.comparer.EQUALS
-            }],
-            options: {
-              fetchSize: recordsToPage / 2,
-              pageState: pageState
-            }
-          };
-          foundUser.findAndPage(query, function (err, data) {
-              var actual = data.toObject();
-              delete actual.id; //ignore for comparison
-              expect(actual).to.eql(expectedUser);
-              pagedRecords = pagedRecords + 1;
-
-            },
-            function (err, result, pageState) {
-              if (pagedRecords === recordsToPage) {
-                done();
+      async.waterfall([
+        function (callback) {
+          for (i = 0; i < recordsToPage; i++) {
+            var newUser = getUser(group);
+            var query = {};
+            newUser.insert(query, function (err, data) {
+              if (err) {
+                console.log('ERROR:' + err);
               }
-              else {
-                expect(pageState).to.be.a("string");
-                find(pageState);
+              var id = newUser.id;
+              ids.push(id);
+              if (ids.length == recordsToPage) {
+                callback(null, id);
               }
             });
-        };
-        find(null);
-      }
+          }
+        },
+        function (id, callback) {
+          var foundUser = new userModel();
+          var expectedUser = getUser(group).toObject();
 
-    ]);
+          function find(pageState) {
+            delete expectedUser.id;
+            var query = {
+              params: [{
+                name: 'group', value: group, comparer: cqlify.comparer.EQUALS
+              }],
+              options: {
+                fetchSize: recordsToPage / 2,
+                pageState: pageState
+              }
+            };
+            foundUser.findAndPage(query, function (err, data) {
+                var actual = data.toObject();
+                delete actual.id; //ignore for comparison
+                expect(actual).to.eql(expectedUser);
+                pagedRecords = pagedRecords + 1;
+
+              },
+              function (err, result, pageState) {
+                if (pagedRecords === recordsToPage) {
+                  done();
+                }
+                else {
+                  expect(pageState).to.be.a("string");
+                  find(pageState);
+                }
+              });
+          };
+          find(null);
+        }
+
+      ]);
+    });
+
   });
+
 
   function getUser(group) {
     var user = userModel();
