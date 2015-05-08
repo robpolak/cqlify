@@ -1,5 +1,5 @@
-describe('Instance Tests', function() {
-  var instance = require('../../../lib/instance');
+describe('Model Tests', function() {
+  //var comparer = require('../../lib/comparer');
 
   var expect = require('chai').expect;
 
