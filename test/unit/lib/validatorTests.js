@@ -1,4 +1,5 @@
 describe('Validator Tests', function() {
+  var moment = require('moment');
   var validator = require('../../../lib/validator');
   var cassandra_driver = require('cassandra-driver');
   var expect = require('chai').expect;
@@ -20,7 +21,7 @@ describe('Validator Tests', function() {
     });
 
     it('Happy Path - null', function() {
-      expect(validator.isString()).to.eql(true);
+      expect(validator.isString(null)).to.eql(true);
     });
 
     it('Happy Path - Empty', function() {
@@ -57,7 +58,7 @@ describe('Validator Tests', function() {
     });
 
     it('Happy Path - null', function() {
-      expect(validator.isInt32()).to.eql(true);
+      expect(validator.isInt32(null)).to.eql(true);
     });
 
 
@@ -96,7 +97,7 @@ describe('Validator Tests', function() {
     });
 
     it('Happy Path - null', function() {
-      expect(validator.isInt64()).to.eql(true);
+      expect(validator.isInt64(null)).to.eql(true);
     });
 
 
@@ -138,7 +139,7 @@ describe('Validator Tests', function() {
       expect(validator.isBoolean('false')).to.eql(true);
     });
     it('is Function - Happy Path - null', function() {
-      expect(validator.isBoolean()).to.eql(true);
+      expect(validator.isBoolean(null)).to.eql(true);
     });
 
     it('Negative - > object', function() {
@@ -198,5 +199,32 @@ describe('Validator Tests', function() {
       expect(res.isValid).to.eql(false)
     });
   });
+
+  describe('isDate', function() {
+    it('is Function', function() {
+      expect(validator.isDate).to.be.a('function');
+    });
+
+    it('Happy Path', function() {
+      expect(validator.isDate(moment())).to.eql(true);
+    });
+
+    it('Happy Path - null', function() {
+      expect(validator.isDate(null)).to.eql(true);
+    });
+
+    it('Happy Path - undefined', function() {
+      expect(validator.isDate()).to.eql(true);
+    });
+
+    it('Happy Path - space', function() {
+      expect(validator.isDate(' ')).to.eql(false);
+    });
+
+    it('Happy Path - new Date - expects Moment only', function() {
+      expect(validator.isDate(new Date())).to.eql(false);
+    });
+
+  })
 
 });
