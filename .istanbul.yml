@@ -1,0 +1,14 @@
+verbose: false
+instrumentation:
+  default-excludes: true
+  excludes: []
+reporting:
+  print: summary
+  reports:
+   - cobertura
+   - html
+   - lcovonly
+  dir: ./coverage
+  report-config:
+    cobertura:
+      file: 'cobertura.xml'
