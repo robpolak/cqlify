@@ -4,7 +4,8 @@
   "description": "Cassandra CQL ORM",
   "main": "app.js",
   "scripts": {
-    "test": "mocha test --recursive --reporter spec"
+    "test": "node_modules/mocha/bin/mocha test --recursive --reporter spec",
+    "unittest": "node_modules/mocha/bin/mocha test/unit --recursive --reporter spec"
   },
   "repository": {
     "type": "git",
