@@ -26,5 +26,21 @@ describe('Cqlify Tests', function() {
       cqlify.createConnection({});
       expect(connect_stub.called).to.eql(true);
     });
+
+    it('Calls connect callback on success' , function(done) {
+      connect_stub.yields(null)
+      cqlify.createConnection({}, function(error){
+        expect(error).to.not.exist;
+        done()
+      });
+    });
+
+    it('Calls connect callback on failure' , function(done) {
+      connect_stub.yields('oh no')
+      cqlify.createConnection({}, function(error){
+        expect(error).to.exist;
+        done()
+      });
+    });
   });
 });
